@@ -22,7 +22,7 @@ export default function App() {
     try {
       const { data: { session } } = await supabase.auth.getSession();
       const token = session?.access_token;
-      const response = await fetch('http://localhost:8000/credits', {
+      const response = await fetch('${import.meta.env.VITE_API_URL}/credits', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -100,7 +100,7 @@ export default function App() {
     const token = session?.access_token;
     
     try {
-      const response = await fetch('http://localhost:8000/upload', {
+      const response = await fetch('${import.meta.env.VITE_API_URL}/upload', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`
@@ -140,7 +140,7 @@ export default function App() {
     const { data: { session } } = await supabase.auth.getSession();
     const token = session?.access_token;
     try {
-      const response = await fetch('http://localhost:8000/create-checkout-session', {
+      const response = await fetch('${import.meta.env.VITE_API_URL}/create-checkout-session', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
