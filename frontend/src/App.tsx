@@ -46,10 +46,14 @@ export default function App() {
       setSession(session);
     });
 
-    fetchCredits();
-
     return () => subscription.unsubscribe();
   }, []);
+
+  useEffect(() => {
+    if (session) {
+      fetchCredits();
+    }
+  }, [session]);
 
   const handleDragOver = useCallback((e: React.DragEvent) => {
     e.preventDefault();
