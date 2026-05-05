@@ -1,0 +1,17 @@
+# Python / Backend
+backend/venv/
+backend/__pycache__/
+backend/.env
+*.pyc
+
+# Node / Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Stripe CLI
+backend/stripe.exe
